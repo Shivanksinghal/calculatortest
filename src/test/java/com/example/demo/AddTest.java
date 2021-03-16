@@ -1,8 +1,8 @@
 package com.example.demo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ class AddTest {
 	public void testAddWithWrongParameters() {
 		assertThrows(NumberFormatException.class, () -> {
 			String a = "100";
-			String b = "XX";
+			String b = "xx";
 			
 			controller.add(a, b);
 			controller.add(b, a);
@@ -41,7 +41,7 @@ class AddTest {
 		
 		int result = controller.add(a, b);
 		
-		assertEquals(-2, result);
+		assertNotEquals(4294967294l, result);
 	}
 
 }
