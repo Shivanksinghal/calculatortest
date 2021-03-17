@@ -14,14 +14,14 @@ class SubtractTest {
 	@Autowired
 	CalculatorController controller;
 	
-//	@Test
-//	public void testSubtractSuccess() {
-//		String a = "10000";
-//		String b = "10000";
-//		
-//		int result = controller.subtract(a, b);
-//		assertEquals(0, result);
-//	}
+	@Test
+	public void testSubtractSuccess() {
+		String a = "10000";
+		String b = "10000";
+		
+		int result = controller.subtract(a, b);
+		assertEquals(0, result);
+	}
 	
 	@Test
 	public void testSubtractWithWrongParameters() {
